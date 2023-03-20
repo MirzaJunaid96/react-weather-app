@@ -3,4 +3,10 @@ USER root
 WORKDIR /app
 COPY . .
 RUN yarn install
-CMD ["yarn", "start"]
+RUN yarn build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+#CMD ["yarn", "start"]
+# curl -sSL https://get.docker.com | bash
