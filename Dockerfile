@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN yarn install
 #RUN npm install 
-RUN yarn build @popperjs/core --save
+RUN yarn build
 
 
 FROM nginx:alpine
