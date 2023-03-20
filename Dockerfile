@@ -3,8 +3,8 @@ USER root
 WORKDIR /app
 COPY . .
 RUN yarn install
-RUN npm install @popperjs/core --save
-RUN yarn build
+#RUN npm install 
+RUN yarn build @popperjs/core --save
 
 
 FROM nginx:alpine
