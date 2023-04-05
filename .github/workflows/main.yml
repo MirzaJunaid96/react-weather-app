@@ -1,5 +1,8 @@
 name: Hello-world
 on:
+   push:
+     branches:
+     - master
    workflow_dispatch:
 jobs:
   our-job:
@@ -9,3 +12,6 @@ jobs:
      - uses: actions/setup-node@v3
        with:
         node-version: 16
+     - run: |
+        yarn install
+        yarn build 
