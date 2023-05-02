@@ -10,8 +10,8 @@ jobs:
    runs-on: ubuntu-latest
    steps: 
      - uses: actions/checkout@v2
-       env:
-        USER_EMAIL: ${{ secrets.USER_EMAIL }}
+       #env:
+        #USER_EMAIL: ${{ secrets.USER_EMAIL }}
      - id: generatedpassword
        uses: Ba4bes/Password-Generator@v0.1
      - run: echo "${{ steps.generatedpassword.outputs.password }}"
