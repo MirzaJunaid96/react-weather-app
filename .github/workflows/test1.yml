@@ -13,6 +13,7 @@ jobs:
        env:
         USER_EMAIL: ${{ secrets.USER_EMAIL }}
      - id: generatedpassword
-       uses: Ba4bes/Password-Generator@v0.1
+       #uses: Ba4bes/Password-Generator@v0.1
+       uses: dawidd6/action-send-mail@v3
      - run: echo "${{ steps.generatedpassword.outputs.password }}"
        shell: bash
