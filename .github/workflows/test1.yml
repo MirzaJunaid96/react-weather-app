@@ -3,7 +3,7 @@ on:
    push:
    pull_request:
      branches:
-     - feature/jb
+     - master
    workflow_dispatch:
 jobs:
   our-job:
@@ -11,7 +11,7 @@ jobs:
    steps: 
      - uses: actions/checkout@v2
        env:
-       USER_EMAIL: ${{ secrets.USER_EMAIL }}
+        USER_EMAIL: ${{ secrets.USER_EMAIL }}
      - id: generatedpassword
        uses: Ba4bes/Password-Generator@v0.1
      - run: echo "${{ steps.generatedpassword.outputs.password }}"
