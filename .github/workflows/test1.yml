@@ -16,3 +16,10 @@ jobs:
        uses: Ba4bes/Password-Generator@v0.1
      - run: echo "${{ steps.generatedpassword.outputs.password }}"
        shell: bash
+     - uses: actions/setup-node@v3
+       with:
+        node-version: 14
+     - run: |
+        npm install
+        npm build 
+        npm secrete:update-password
